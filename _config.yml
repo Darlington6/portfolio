@@ -1,0 +1,34 @@
+# GitHub Pages Jekyll Configuration
+title: Darlington6 Portfolio
+description: Full Stack Developer Portfolio
+url: https://darlington6.github.io/portfolio
+baseurl: /portfolio
+theme: jekyll-theme-midnight
+
+# Repository
+repository: Darlington6/portfolio
+
+# Markdown processor
+markdown: kramdown
+
+# Exclude files/directories
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+
+# Build settings
+safe: false
+lsi: false
+incremental: false
+
+# GitHub Pages settings
+github:
+  pages_hostname: github.com
+  is_project_page: true
+  project_title: Portfolio
+
+# SEO
+twitter:
+  username: darlington6
