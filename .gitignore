@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build outputs
+dist/
+build/
+*.o
+*.pyc
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+temp/
