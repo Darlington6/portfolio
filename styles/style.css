@@ -15,6 +15,8 @@ html {
 :root {
     --container-width: 1200px;
     --radius-pill: 999px;
+    /* Real height set by script.js; this is just a sane fallback. */
+    --navbar-h: 68px;
 }
 
 [data-theme="terminal"] {
@@ -175,13 +177,23 @@ h1, h2, h3 {
     color: var(--text);
 }
 
-.nav-menu {
+.nav-menu-inline {
     display: flex;
     gap: 26px;
     list-style: none;
     font-size: 14px;
 }
 
+/* The drawer (#navMenu) is a top-level sibling of .navbar, not nested inside
+   it — that keeps its stacking context independent of the navbar's, so it
+   can never paint over navbar controls like the hamburger. Hidden here;
+   the mobile media query turns it into the slide-in panel. */
+.nav-menu {
+    display: none;
+    list-style: none;
+}
+
+.nav-menu-inline a,
 .nav-menu a {
     text-decoration: none;
     color: var(--text-muted);
@@ -189,6 +201,7 @@ h1, h2, h3 {
     transition: color 0.2s ease;
 }
 
+.nav-menu-inline a:hover,
 .nav-menu a:hover {
     color: var(--accent);
 }
@@ -950,16 +963,16 @@ h1 {
     .nav-menu {
         display: flex;
         position: fixed;
-        top: 0;
+        top: var(--navbar-h, 68px);
         right: 0;
         height: auto;
-        max-height: 100vh;
+        max-height: calc(100vh - var(--navbar-h, 68px));
         width: min(70vw, 340px);
         flex-direction: column;
         background: var(--bg);
         border-left: 1px solid var(--border);
-        border-radius: 0 0 0 16px;
-        padding: 84px 28px 28px;
+        border-radius: 16px 0 0 16px;
+        padding: 20px 28px 28px;
         gap: 8px;
         overflow-y: auto;
         transform: translateX(100%);
@@ -1008,7 +1021,10 @@ h1 {
     .nav-overlay {
         display: block;
         position: fixed;
-        inset: 0;
+        top: var(--navbar-h, 68px);
+        left: 0;
+        right: 0;
+        bottom: 0;
         background: rgba(0, 0, 0, 0.55);
         opacity: 0;
         pointer-events: none;
@@ -1021,8 +1037,18 @@ h1 {
         pointer-events: auto;
     }
 
+    .nav-menu-inline {
+        display: none;
+    }
+
     .hamburger {
         display: flex;
+    }
+
+    /* The drawer's own close button sits in the same corner as the hamburger
+       once open, so hide the hamburger to avoid two overlapping tap targets. */
+    .hamburger[aria-expanded="true"] {
+        visibility: hidden;
     }
 
     .theme-switch-desktop {
@@ -1036,6 +1062,13 @@ h1 {
 
     .nav-theme-switch-wrap .theme-switch {
         justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 6px;
+    }
+
+    .nav-theme-switch-wrap .theme-btn {
+        padding: 6px 10px;
+        font-size: 11px;
     }
 
     .hero-inner {

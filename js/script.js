@@ -4,7 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
     setupThemeSwitcher();
     setupProjectForm();
     setFooterYear();
+    syncNavbarHeight();
 });
+
+// Keep --navbar-h matched to the real rendered navbar height, so the mobile
+// drawer and its overlay start exactly where the navbar ends, on any device.
+function syncNavbarHeight() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
+    const update = () => {
+        document.documentElement.style.setProperty('--navbar-h', `${navbar.offsetHeight}px`);
+    };
+
+    update();
+    window.addEventListener('resize', update);
+}
 
 // Keep the footer copyright year current without a yearly manual edit
 function setFooterYear() {
@@ -95,8 +110,10 @@ function setupProjectForm() {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Honeypot: if a bot filled this hidden field, silently drop the submission.
-        if (form._honey && form._honey.value) return;
+        // Spam protection for the "_honey" field is handled server-side by
+        // FormSubmit. Don't also gate it here: mobile browsers sometimes
+        // autofill hidden fields, and silently dropping a real submission
+        // with zero feedback is worse than the spam it would occasionally miss.
 
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
