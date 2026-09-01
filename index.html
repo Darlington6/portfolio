@@ -1,47 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="terminal">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darlington6 - Full Stack Developer Portfolio</title>
+    <title>Desmond Tunyinko - Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Desmond Tunyinko (Darlington6), full-stack developer building with Python, TypeScript, React and Flutter, plus UI/UX design and project management.">
+    <meta property="og:title" content="Desmond Tunyinko - Full Stack Developer">
+    <meta property="og:description" content="Full-stack developer building with Python, TypeScript, React and Flutter - plus UI/UX design and project management.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0a0e0f">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e0f'/%3E%3Ctext x='32' y='43' font-family='ui-monospace,Menlo,monospace' font-size='24' font-weight='700' fill='%234ade80' text-anchor='middle'%3EDT%3C/text%3E%3C/svg%3E">
+
+    <!-- Set the saved theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('portfolio-theme');
+            if (saved === 'terminal' || saved === 'glass' || saved === 'warm') {
+                document.documentElement.setAttribute('data-theme', saved);
+            }
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&family=Karla:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
+        <div class="container nav-inner">
             <div class="nav-brand">
-                <i class="fas fa-code"></i>
-                <span>Darlington6</span>
+                <span class="brand-mark" aria-hidden="true">DT</span>
+                <span class="brand-name">Desmond Tunyinko</span>
             </div>
-            <ul class="nav-menu">
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-close-wrap">
+                    <button type="button" class="nav-close" aria-label="Close menu">
+                        <i class="fas fa-xmark" aria-hidden="true"></i>
+                    </button>
+                </li>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#featured">Featured</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#featured">Work</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="nav-theme-switch-wrap">
+                    <div class="theme-switch" role="group" aria-label="Choose a visual theme">
+                        <button type="button" class="theme-btn" data-theme-choice="terminal" aria-pressed="true">Terminal</button>
+                        <button type="button" class="theme-btn" data-theme-choice="glass" aria-pressed="false">Glass</button>
+                        <button type="button" class="theme-btn" data-theme-choice="warm" aria-pressed="false">Warm</button>
+                    </div>
+                </li>
             </ul>
-            <div class="hamburger">
+
+            <div class="theme-switch theme-switch-desktop" role="group" aria-label="Choose a visual theme">
+                <button type="button" class="theme-btn" data-theme-choice="terminal" aria-pressed="true">Terminal</button>
+                <button type="button" class="theme-btn" data-theme-choice="glass" aria-pressed="false">Glass</button>
+                <button type="button" class="theme-btn" data-theme-choice="warm" aria-pressed="false">Warm</button>
+            </div>
+
+            <div class="hamburger" aria-label="Toggle navigation menu" aria-controls="navMenu" aria-expanded="false" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
     </nav>
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <main id="main">
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
+        <div class="mesh-bg" aria-hidden="true"></div>
+        <div class="container hero-inner">
             <div class="hero-content">
-                <h1>Full Stack Developer</h1>
-                <p>Building innovative solutions with Python, JavaScript, TypeScript, and more</p>
+                <div class="window-chrome" aria-hidden="true">
+                    <span class="chrome-dot dot-red"></span>
+                    <span class="chrome-dot dot-yellow"></span>
+                    <span class="chrome-dot dot-green"></span>
+                    <span class="chrome-title">desmond@portfolio ~ %</span>
+                </div>
+                <div class="eyebrow">Full Stack Developer</div>
+                <h1>Desmond Tunyinko</h1>
+                <p class="hero-tagline">
+                    I build reliable software end-to-end using Python and Django APIs, React and TypeScript
+                    interfaces, and Flutter apps, with a touch of Figma design and project management on the side.
+                </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="https://github.com/Darlington6" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-github"></i> GitHub Profile
+                    <a href="#featured" class="btn btn-primary">View My Work</a>
+                    <a href="https://github.com/Darlington6" class="btn btn-secondary" target="_blank" rel="noopener">
+                        <i class="fab fa-github" aria-hidden="true"></i> GitHub Profile
                     </a>
                 </div>
+            </div>
+
+            <div class="hero-photo">
+                <div class="blob-decor" aria-hidden="true"></div>
+                <div class="photo-frame">
+                    <img src="assets/profile-1.jpeg" alt="Desmond Tunyinko" class="hero-photo-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container about-inner">
+            <div class="section-head">
+                <span class="eyebrow">$ cat about.md</span>
+                <h2>About</h2>
+            </div>
+            <div class="about-body">
+                <p>
+                    I'm Desmond, <strong>Darlington6</strong> on GitHub, and I like building things end to end
+                    rather than just one layer of the stack. Most days that's Python and Django on the backend,
+                    React and TypeScript on the front, Flutter when it needs to live on a phone.
+                </p>
+                <p>
+                    Lately I've been pulled into Web3; <strong>AgentPay</strong> and <strong>ProofPass</strong>,
+                    both below, came out of that curiosity. I also utilise AI tools to move faster day to day,
+                    and take on virtual assistant and freelance work on the side.
+                </p>
+                <div class="about-facts">
+                    <div class="fact"><i class="fas fa-code" aria-hidden="true"></i> Full-stack development</div>
+                    <div class="fact"><i class="fab fa-ethereum" aria-hidden="true"></i> Web3 &amp; Blockchain</div>
+                    <div class="fact"><i class="fab fa-figma" aria-hidden="true"></i> UI/UX design in Figma</div>
+                    <div class="fact"><i class="fas fa-tasks" aria-hidden="true"></i> Project management</div>
+                    <div class="fact"><i class="fas fa-circle-check" aria-hidden="true"></i> Open to new opportunities</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">$ cat services.json</span>
+                <h2>What I Do</h2>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+                    <h3>Full-Stack Development</h3>
+                    <p>End-to-end web apps, Python/Django and DRF APIs, React and TypeScript frontends, deployed and monitored.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fab fa-ethereum" aria-hidden="true"></i></div>
+                    <h3>Web3 &amp; Blockchain</h3>
+                    <p>Smart contracts and on-chain tooling in Solidity, policy-enforced payments, zero-knowledge verification.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
+                    <h3>Mobile Apps (Flutter)</h3>
+                    <p>Cross-platform mobile apps in Dart/Flutter, from UI to Firebase-backed real-time features.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fab fa-figma" aria-hidden="true"></i></div>
+                    <h3>UI/UX Design (Figma)</h3>
+                    <p>Wireframes to polished interfaces, designing in Figma before, or alongside, writing the code.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tasks" aria-hidden="true"></i></div>
+                    <h3>Project Management</h3>
+                    <p>Planning and running projects in Trello, scoping, timelines, and keeping delivery on track.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+                    <h3>Virtual Assistance &amp; Freelance</h3>
+                    <p>Remote support and freelance engagements, admin, coordination, and getting things done reliably.</p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -49,109 +191,127 @@
     <!-- Featured Projects Section -->
     <section id="featured" class="featured-section">
         <div class="container">
-            <h2>Featured Projects</h2>
+            <div class="section-head">
+                <span class="eyebrow">$ ls ./featured-projects</span>
+                <h2>Selected Work</h2>
+            </div>
             <div class="featured-grid">
-                <!-- ptrack-platform -->
+
+                <!-- pTrack -->
                 <div class="featured-card">
                     <div class="card-header">
-                        <h3>ptrack-platform</h3>
+                        <h3>pTrack</h3>
                         <span class="badge typescript">TypeScript</span>
                     </div>
-                    <p>A comprehensive platform project built with TypeScript. Showcasing modern web development practices and full-stack architecture.</p>
+                    <p>A gamified platform for reporting plastic-waste hotspots and logging recycling activity in Kigali, Rwanda. Django/DRF API with a React + TypeScript PWA frontend. My BSc Software Engineering capstone at ALU.</p>
                     <div class="card-tags">
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Web Development</span>
+                        <span class="tag">Capstone</span>
                         <span class="tag">Full Stack</span>
+                        <span class="tag">PWA</span>
                     </div>
-                    <a href="https://github.com/Darlington6/ptrack-platform" target="_blank" class="card-link">
-                        View Repository <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="card-links">
+                        <a href="https://github.com/Darlington6/ptrack-platform" target="_blank" rel="noopener" class="card-link">
+                            View Repository <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://ptrack-platform.vercel.app" target="_blank" rel="noopener" class="card-link card-link-secondary">
+                            Live Demo <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AgentPay -->
+                <div class="featured-card">
+                    <div class="card-header">
+                        <h3>AgentPay</h3>
+                        <span class="badge javascript">JavaScript</span>
+                    </div>
+                    <p>Programmable, on-chain spending policies for AI agents: a Solidity contract that enforces per-transaction limits, daily caps and recipient whitelists on Base, with a wallet-connected frontend.</p>
+                    <div class="card-tags">
+                        <span class="tag">Web3</span>
+                        <span class="tag">Solidity</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Darlington6/agentpay" target="_blank" rel="noopener" class="card-link">
+                            View Repository <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://agentpay-nu.vercel.app" target="_blank" rel="noopener" class="card-link card-link-secondary">
+                            Live Demo <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AgriFlow -->
+                <div class="featured-card">
+                    <div class="card-header">
+                        <h3>AgriFlow</h3>
+                        <span class="badge typescript">TypeScript</span>
+                    </div>
+                    <p>A climate-smart demand-to-farm coordination platform that turns verified buyer demand into production planning, harvest forecasting and delivery, instead of farmers producing and hoping to find a buyer.</p>
+                    <div class="card-tags">
+                        <span class="tag">Prototype</span>
+                        <span class="tag">AgTech</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Darlington6/agri-flow" target="_blank" rel="noopener" class="card-link">
+                            View Repository <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ProofPass -->
+                <div class="featured-card">
+                    <div class="card-header">
+                        <h3>ProofPass</h3>
+                        <span class="badge typescript">TypeScript</span>
+                    </div>
+                    <p>Zero-knowledge age-range verification built on Midnight, proving you're within an age range without revealing your birthdate. Built for the MLH Midnight Hackathon, Integrate Midnight track.</p>
+                    <div class="card-tags">
+                        <span class="tag">Hackathon</span>
+                        <span class="tag">Zero-Knowledge</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Darlington6/proofpass" target="_blank" rel="noopener" class="card-link">
+                            View Repository <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rovify -->
+                <div class="featured-card">
+                    <div class="card-header">
+                        <h3>Rovify</h3>
+                        <span class="badge dart">Dart</span>
+                    </div>
+                    <p>A Flutter event-discovery app with NFT-ticketed events, real-time interactions and crypto wallet integration, powered by Firestore for live data and community features.</p>
+                    <div class="card-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Mobile</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Darlington6/rovify" target="_blank" rel="noopener" class="card-link">
+                            View Repository <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- exam_prep -->
                 <div class="featured-card">
                     <div class="card-header">
-                        <h3>exam_prep</h3>
+                        <h3>Exam Prep</h3>
                         <span class="badge typescript">TypeScript</span>
                     </div>
-                    <p>A web application to help students prepare for upcoming exams with ease. Interactive study tools and progress tracking.</p>
+                    <p>A study companion web app that helps students prepare for exams, with interactive practice sets and progress tracking to make revision less painful.</p>
                     <div class="card-tags">
-                        <span class="tag">TypeScript</span>
                         <span class="tag">Education</span>
                         <span class="tag">Web App</span>
                     </div>
-                    <a href="https://github.com/Darlington6/exam_prep" target="_blank" class="card-link">
-                        View Repository <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="card-links">
+                        <a href="https://github.com/Darlington6/exam_prep" target="_blank" rel="noopener" class="card-link">
+                            View Repository <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- safeboda -->
-                <div class="featured-card">
-                    <div class="card-header">
-                        <h3>safeboda</h3>
-                        <span class="badge python">Python</span>
-                    </div>
-                    <p>A transportation/ride-sharing system built with Python. Demonstrates backend development, API design, and database management.</p>
-                    <div class="card-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Backend</span>
-                        <span class="tag">API</span>
-                    </div>
-                    <a href="https://github.com/Darlington6/safeboda" target="_blank" class="card-link">
-                        View Repository <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Africa_is_Talking_Hackathon -->
-                <div class="featured-card">
-                    <div class="card-header">
-                        <h3>Africa_is_Talking_Hackathon</h3>
-                        <span class="badge javascript">JavaScript</span>
-                    </div>
-                    <p>Hackathon project leveraging Africa's Talking API. Showcasing rapid development and innovative problem-solving.</p>
-                    <div class="card-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Hackathon</span>
-                        <span class="tag">Innovation</span>
-                    </div>
-                    <a href="https://github.com/Darlington6/Africa_is_Talking_Hackathon" target="_blank" class="card-link">
-                        View Repository <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- alu-web_react -->
-                <div class="featured-card">
-                    <div class="card-header">
-                        <h3>alu-web_react</h3>
-                        <span class="badge javascript">JavaScript</span>
-                    </div>
-                    <p>React-based web projects demonstrating modern frontend development with component-based architecture and state management.</p>
-                    <div class="card-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Frontend</span>
-                    </div>
-                    <a href="https://github.com/Darlington6/alu-web_react" target="_blank" class="card-link">
-                        View Repository <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- alu-AirBnB_clone_v2 -->
-                <div class="featured-card">
-                    <div class="card-header">
-                        <h3>alu-AirBnB_clone_v2</h3>
-                        <span class="badge python">Python</span>
-                    </div>
-                    <p>Full-stack AirBnB clone application. Comprehensive project showcasing database design, REST APIs, and web development fundamentals.</p>
-                    <div class="card-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Full Stack</span>
-                        <span class="tag">Database</span>
-                    </div>
-                    <a href="https://github.com/Darlington6/alu-AirBnB_clone_v2" target="_blank" class="card-link">
-                        View Repository <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -159,140 +319,25 @@
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <div class="container">
-            <h2>Technical Skills</h2>
+            <div class="section-head">
+                <span class="eyebrow">$ cat skills.json</span>
+                <h2>Skills</h2>
+            </div>
             <div class="skills-grid">
-                <!-- Python -->
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fab fa-python"></i>
-                        <h3>Python</h3>
-                    </div>
-                    <p class="skill-desc">Backend development, APIs, Data structures</p>
-                    <div class="skill-projects">
-                        <a href="https://github.com/Darlington6/safeboda" target="_blank">safeboda</a>
-                        <a href="https://github.com/Darlington6/alu-AirBnB_clone_v2" target="_blank">AirBnB Clone</a>
-                        <a href="https://github.com/Darlington6/dsa" target="_blank">DSA</a>
-                        <a href="https://github.com/Darlington6/alu-higher_level_programming" target="_blank">Higher Level Programming</a>
-                    </div>
-                </div>
-
-                <!-- JavaScript -->
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fab fa-js"></i>
-                        <h3>JavaScript</h3>
-                    </div>
-                    <p class="skill-desc">Frontend, React, Interactive Applications</p>
-                    <div class="skill-projects">
-                        <a href="https://github.com/Darlington6/alu-web_react" target="_blank">Web React</a>
-                        <a href="https://github.com/Darlington6/Africa_is_Talking_Hackathon" target="_blank">Africa Hackathon</a>
-                        <a href="https://github.com/Darlington6/easylunch" target="_blank">EasyLunch</a>
-                        <a href="https://github.com/Darlington6/dlf-africa" target="_blank">DLF Africa</a>
-                    </div>
-                </div>
-
-                <!-- TypeScript -->
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-code"></i>
-                        <h3>TypeScript</h3>
-                    </div>
-                    <p class="skill-desc">Type-safe development, Modern web apps</p>
-                    <div class="skill-projects">
-                        <a href="https://github.com/Darlington6/ptrack-platform" target="_blank">ptrack-platform</a>
-                        <a href="https://github.com/Darlington6/exam_prep" target="_blank">exam_prep</a>
-                        <a href="https://github.com/Darlington6/formative-1-mini-blog-project-Darlington6" target="_blank">Mini Blog</a>
-                    </div>
-                </div>
-
-                <!-- Dart -->
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Dart</h3>
-                    </div>
-                    <p class="skill-desc">Flutter applications, Mobile development</p>
-                    <div class="skill-projects">
-                        <a href="https://github.com/Darlington6/rovify" target="_blank">Rovify</a>
-                        <a href="https://github.com/Darlington6/time_tracking_application" target="_blank">Time Tracking</a>
-                        <a href="https://github.com/Darlington6/note-taking_app" target="_blank">Note Taking App</a>
-                        <a href="https://github.com/Darlington6/Edith-Desmond" target="_blank">Edith-Desmond</a>
-                    </div>
-                </div>
-
-                <!-- C++ -->
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-cogs"></i>
-                        <h3>C++</h3>
-                    </div>
-                    <p class="skill-desc">Systems programming, Applications</p>
-                    <div class="skill-projects">
-                        <a href="https://github.com/Darlington6/breakout1_animatedcontainer" target="_blank">Animated Container</a>
-                        <a href="https://github.com/Darlington6/temperature_converter_app" target="_blank">Temperature Converter</a>
-                        <a href="https://github.com/Darlington6/testing" target="_blank">Testing</a>
-                    </div>
-                </div>
-
-                <!-- Shell/Bash -->
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-terminal"></i>
-                        <h3>Shell/Bash</h3>
-                    </div>
-                    <p class="skill-desc">System administration, DevOps, Scripting</p>
-                    <div class="skill-projects">
-                        <a href="https://github.com/Darlington6/alu-shell" target="_blank">ALU Shell</a>
-                        <a href="https://github.com/Darlington6/alu-system_engineering-devops" target="_blank">System Engineering</a>
-                        <a href="https://github.com/Darlington6/summative-2_Negpod_27" target="_blank">Summative</a>
-                    </div>
-                </div>
-
-                <!-- HTML/CSS -->
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fab fa-html5"></i>
-                        <h3>HTML/CSS</h3>
-                    </div>
-                    <p class="skill-desc">Responsive design, Web styling, UI</p>
-                    <div class="skill-projects">
-                        <a href="https://github.com/Darlington6/alu-web_front_end" target="_blank">Web Front End</a>
-                        <a href="https://github.com/Darlington6/alu-web-development" target="_blank">Web Development</a>
-                        <a href="https://github.com/Darlington6/alu-headphones" target="_blank">Headphones</a>
-                    </div>
-                </div>
-
-                <!-- DevOps/Tools -->
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-tools"></i>
-                        <h3>DevOps & Tools</h3>
-                    </div>
-                    <p class="skill-desc">Git, GitHub, Docker, CI/CD practices</p>
-                    <div class="skill-projects">
-                        <a href="https://github.com/Darlington6/DevOps-j26" target="_blank">DevOps</a>
-                        <a href="https://github.com/Darlington6/alu-system_engineering-devops" target="_blank">System Engineering</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- All Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2>All Projects</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="javascript">JavaScript</button>
-                <button class="filter-btn" data-filter="typescript">TypeScript</button>
-                <button class="filter-btn" data-filter="dart">Dart</button>
-                <button class="filter-btn" data-filter="other">Other</button>
-            </div>
-
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be loaded here by JavaScript -->
+                <div class="skill-chip"><i class="fab fa-python" aria-hidden="true"></i><span>Python</span></div>
+                <div class="skill-chip"><i class="fab fa-js" aria-hidden="true"></i><span>JavaScript</span></div>
+                <div class="skill-chip"><i class="fas fa-code" aria-hidden="true"></i><span>TypeScript</span></div>
+                <div class="skill-chip"><i class="fas fa-mobile-alt" aria-hidden="true"></i><span>Dart / Flutter</span></div>
+                <div class="skill-chip"><i class="fas fa-cogs" aria-hidden="true"></i><span>C++</span></div>
+                <div class="skill-chip"><i class="fab fa-ethereum" aria-hidden="true"></i><span>Solidity / Web3</span></div>
+                <div class="skill-chip"><i class="fas fa-terminal" aria-hidden="true"></i><span>Shell / Bash</span></div>
+                <div class="skill-chip"><i class="fas fa-cloud" aria-hidden="true"></i><span>DevOps & Cloud</span></div>
+                <div class="skill-chip"><i class="fab fa-figma" aria-hidden="true"></i><span>UI/UX Design (Figma)</span></div>
+                <div class="skill-chip"><i class="fas fa-paper-plane" aria-hidden="true"></i><span>Postman</span></div>
+                <div class="skill-chip"><i class="fab fa-trello" aria-hidden="true"></i><span>Trello</span></div>
+                <div class="skill-chip"><i class="fab fa-google" aria-hidden="true"></i><span>Google Workspace</span></div>
+                <div class="skill-chip"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i><span>AI-Assisted Development</span></div>
+                <div class="skill-chip"><i class="fas fa-tasks" aria-hidden="true"></i><span>Project Management</span></div>
             </div>
         </div>
     </section>
@@ -300,30 +345,75 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Connect With Me</h2>
-            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+            <div class="section-head">
+                <span class="eyebrow">$ ./contact.sh --run</span>
+                <h2>Got Something Worth Building?</h2>
+            </div>
+            <p class="contact-lead">
+                If you're looking to build a product, need a hand with Python, TypeScript or Flutter work,
+                or just want a UI designed in Figma, tell me about it and I'll follow up.
+            </p>
+
             <div class="contact-links">
-                <a href="https://github.com/Darlington6" target="_blank" class="contact-btn">
-                    <i class="fab fa-github"></i> GitHub
+                <a href="mailto:desmondtunyinko6@gmail.com" class="contact-btn">
+                    <i class="fas fa-envelope" aria-hidden="true"></i> Email
                 </a>
-                <a href="mailto:darlington@example.com" class="contact-btn">
-                    <i class="fas fa-envelope"></i> Email
+                <a href="https://wa.me/233246448694" target="_blank" rel="noopener" class="contact-btn">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
                 </a>
-                <a href="https://linkedin.com/in/darlington6" target="_blank" class="contact-btn">
-                    <i class="fab fa-linkedin"></i> LinkedIn
+                <a href="https://github.com/Darlington6" target="_blank" rel="noopener" class="contact-btn">
+                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
                 </a>
-                <a href="https://twitter.com/darlington6" target="_blank" class="contact-btn">
-                    <i class="fab fa-twitter"></i> Twitter
+                <a href="https://www.linkedin.com/in/desmond-tunyinko-a367b1296/" target="_blank" rel="noopener" class="contact-btn">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
                 </a>
+            </div>
+
+            <div class="contact-divider"><span>or</span></div>
+
+            <div class="project-form-card">
+                <h3>Suggest a Project</h3>
+                <p class="project-form-lead">Drop the idea below; it lands straight in my inbox and I'll get back to you.</p>
+
+                <form id="projectForm" class="project-form" action="https://formsubmit.co/ajax/5214071a033547a66c4f46a55e42881a" method="POST">
+                    <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <input type="hidden" name="_subject" value="New project suggestion from your portfolio">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="form-row">
+                        <label for="formName">Your name</label>
+                        <input type="text" id="formName" name="Name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="formEmail">Your email</label>
+                        <input type="email" id="formEmail" name="Email" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="formMessage">What are you looking to build?</label>
+                        <textarea id="formMessage" name="Project idea" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary form-submit">Send Idea</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
             </div>
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Darlington6. All rights reserved.</p>
-            <p>Built with <i class="fas fa-heart"></i> and modern web technologies</p>
+        <div class="container footer-inner">
+            <div class="footer-social">
+                <a href="mailto:desmondtunyinko6@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://wa.me/233246448694" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                <a href="https://github.com/Darlington6" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/desmond-tunyinko-a367b1296/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            </div>
+            <p>&copy; <span id="year"></span> Desmond Tunyinko (Darlington6). All rights reserved.</p>
+            <a href="#home" class="footer-top">Back to top ↑</a>
         </div>
     </footer>
 
