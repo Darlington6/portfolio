@@ -1,157 +1,62 @@
-# Darlington6 - Professional Portfolio
+# Desmond Tunyinko — Portfolio
 
-Welcome to my professional portfolio! This site showcases my projects, skills, and experience as a full-stack developer.
+Personal portfolio site for Desmond Tunyinko (GitHub: [Darlington6](https://github.com/Darlington6)) — a full-stack developer working across Python, JavaScript/TypeScript, and Flutter, with UI/UX design in Figma and project management on the side.
 
-## 🌟 Featured Projects
+**Live site:** https://darlington6.github.io/portfolio
 
-### TypeScript
-- **ptrack-platform** - Comprehensive TypeScript platform project
-- **exam_prep** - Educational web application for exam preparation
+## Features
 
-### Python
-- **safeboda** - Transportation system backend
-- **alu-AirBnB_clone_v2** - Full-stack AirBnB clone implementation
+- Three switchable visual themes — Terminal, Glass, and Warm — with the choice remembered across visits
+- Home, About, Services, Featured Work, Skills, and Contact sections
+- A "Suggest a Project" contact form (via FormSubmit) alongside direct email, WhatsApp, GitHub, and LinkedIn links
+- Fully responsive, down to a 320px-wide screen
+- Plain HTML, CSS, and JavaScript — no build step or framework
 
-### JavaScript/React
-- **alu-web_react** - React-based web projects
-- **Africa_is_Talking_Hackathon** - Innovative hackathon project
+## Featured Work
 
-## 💻 Technical Skills
+- **pTrack** — plastic-waste tracking and incentive platform for Kigali, Rwanda; BSc Software Engineering capstone at ALU
+- **AgentPay** — on-chain, policy-enforced spending contract for AI agents (Solidity, Base)
+- **AgriFlow** — climate-smart platform connecting farmer production to buyer demand
+- **ProofPass** — zero-knowledge age-range verification built on Midnight
+- **Rovify** — Flutter event-discovery app with NFT-ticketed events
+- **exam_prep** — exam preparation web app
 
-### Languages
-- **Python** - Backend development, APIs, Data Structures
-- **JavaScript** - Frontend, React, Interactive Applications
-- **TypeScript** - Type-safe development, Modern web apps
-- **Dart** - Flutter applications, Mobile development
-- **C++** - Systems programming, Applications
-- **Shell/Bash** - System administration, DevOps, Scripting
-- **HTML/CSS** - Responsive design, Web styling
+## Skills
 
-### Key Areas
-- Full Stack Web Development
-- Mobile Development (Flutter)
-- API Design & Development
-- Database Management
-- DevOps & System Engineering
-- Data Structures & Algorithms
+Python, JavaScript, TypeScript, Dart/Flutter, C++, Solidity/Web3, Shell/Bash, DevOps & Cloud, UI/UX Design (Figma), Postman, Trello, Google Workspace, AI-Assisted Development, Project Management
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 portfolio/
-├── index.html           # Main portfolio page
+├── index.html            # Main portfolio page
 ├── styles/
-│   └── style.css        # Responsive styling
+│   └── style.css         # Theme tokens, layout, and component styles
 ├── js/
-│   └── script.js        # Interactive functionality
-├── _config.yml          # Jekyll configuration
-└── README.md            # This file
+│   └── script.js         # Theme switching, mobile nav, and contact form
+├── assets/
+│   └── profile-1.jpeg    # Hero photo
+├── _config.yml           # Jekyll configuration (GitHub Pages)
+└── README.md
 ```
 
-## 🚀 Getting Started
+## Running Locally
 
-### View Online
-Visit the portfolio at: https://darlington6.github.io/portfolio
+```bash
+git clone https://github.com/Darlington6/portfolio.git
+cd portfolio
+open index.html   # or open the file in any browser
+```
 
-### Run Locally
-1. Clone this repository
-   ```bash
-   git clone https://github.com/Darlington6/portfolio.git
-   cd portfolio
-   ```
+No dependencies or build step required.
 
-2. Open `index.html` in your browser
-   ```bash
-   open index.html  # macOS
-   # or
-   start index.html # Windows
-   ```
+## Contact
 
-3. For Jekyll preview (requires Ruby):
-   ```bash
-   gem install bundler jekyll
-   bundle install
-   bundle exec jekyll serve
-   # Visit http://localhost:4000/portfolio
-   ```
-
-## 🎨 Features
-
-- ✨ **Responsive Design** - Works perfectly on all devices
-- 🚀 **Fast Loading** - Optimized for performance
-- 📱 **Mobile Friendly** - Touch-friendly navigation
-- 🎯 **Project Filtering** - Filter projects by programming language
-- 🔗 **Easy Navigation** - Smooth scrolling and intuitive layout
-- 🌐 **GitHub Integration** - Direct links to all repositories
-
-## 📊 Portfolio Sections
-
-### Home
-Introduction and call-to-action buttons
-
-### Featured Projects
-Showcase of 6 highlighted projects with detailed descriptions
-
-### Technical Skills
-Organized by programming language with project examples
-
-### All Projects
-Complete list of 60+ projects with filtering capabilities
-
-### Contact
-Social media and communication links
-
-## 🔧 Technologies Used
-
-- HTML5
-- CSS3 (with CSS Grid & Flexbox)
-- Vanilla JavaScript
-- GitHub Pages
-- Jekyll
-
-## 📈 Project Statistics
-
-- **Total Projects**: 60+
-- **Languages**: Python, JavaScript, TypeScript, Dart, C++, Shell, HTML/CSS
-- **Public Repos**: 50+
-- **Private Repos**: 10+
-
-## 🎯 Featured Skills
-
-### Backend
-- Python, APIs, Database Management, Authentication
-- SafeBoda platform, AirBnB Clone
-
-### Frontend
-- React, TypeScript, Responsive Design
-- Interactive web applications
-
-### Mobile
-- Flutter, Dart
-- Cross-platform applications
-
-### DevOps
-- Shell/Bash scripting
-- System engineering
-- CI/CD practices
-
-## 📞 Contact & Social
-
-- **GitHub**: https://github.com/Darlington6
-- **Email**: Contact via GitHub
-- **LinkedIn**: linkedin.com/in/darlington6
-- **Twitter**: twitter.com/darlington6
-
-## 📄 License
-
-This portfolio is open source and available under the MIT License.
-
-## 🤝 Contributing
-
-Feel free to fork this repository and customize it for your own portfolio!
+- Email: desmondtunyinko6@gmail.com
+- WhatsApp: https://wa.me/233246448694
+- GitHub: https://github.com/Darlington6
+- LinkedIn: https://www.linkedin.com/in/desmond-tunyinko-a367b1296/
 
 ---
 
-**Last Updated**: 2024
-
-Built with ❤️ by Darlington6
+Built by Desmond Tunyinko.
